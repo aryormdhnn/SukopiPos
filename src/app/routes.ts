@@ -3,6 +3,9 @@ import { Layout } from "./components/Layout";
 import { HomePage } from "./components/HomePage";
 import { OrdersPage } from "./components/OrdersPage";
 import { InventoryPage } from "./components/InventoryPage";
+import { InventoryPurchasePage } from "./components/InventoryPurchasePage";
+import { AddInventoryItemPage } from "./components/AddInventoryItemPage";
+import { CreatePOPage } from "./components/CreatePOPage";
 import { ReportPage } from "./components/ReportPage";
 import { DetailedReportsPage } from "./components/DetailedReportsPage";
 import { ManageMenuPage } from "./components/ManageMenuPage";
@@ -19,6 +22,9 @@ export function createRouter() {
         { index: true, Component: HomePage },
         { path: "orders", Component: OrdersPage },
         { path: "inventory", Component: InventoryPage },
+        { path: "inventory/add", Component: AddInventoryItemPage },
+        { path: "inventory/purchase", Component: InventoryPurchasePage },
+        { path: "inventory/purchase/create", Component: CreatePOPage },
         { path: "report", Component: ReportPage },
         { path: "report/detailed", Component: DetailedReportsPage },
         { path: "menu", Component: ManageMenuPage },

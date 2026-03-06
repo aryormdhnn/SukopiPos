@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { TopBar } from "./TopBar";
 import { inventoryItems, type InventoryItem } from "./pos-data";
 import { ArrowLeft, ArrowRight, Clock, Plus, X, MoreVertical, AlertTriangle, Package, TrendingDown } from "lucide-react";
@@ -17,6 +18,7 @@ const transfers = [
 ];
 
 export function InventoryPage() {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [view, setView] = useState<"overview" | "detail">("overview");
   const [selectedItem, setSelectedItem] = useState<InventoryItem | null>(null);
@@ -114,9 +116,19 @@ export function InventoryPage() {
             </table>
             <div className="flex items-center justify-between p-4 border-t border-[#F0F0F0]">
               <p className="text-[11px] text-[#C4C4C4]">Showing {sorted.length} of {totalItems} items</p>
-              <div className="flex gap-2">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => navigate("/inventory/purchase")}
+                  className="px-4 py-2.5 bg-[#EF4123] text-white rounded-xl text-[12px] hover:bg-[#D93A1F] shadow-sm shadow-[#EF4123]/25"
+                >
+                  Pembelian Bahan Baku
+                </button>
+                <div className="w-px h-6 bg-[#EBEBEB] mx-1"></div>
                 <button className="px-4 py-2.5 border border-[#EF4123] text-[#EF4123] rounded-xl text-[12px] hover:bg-[#FEF3F0]">Import CSV</button>
-                <button className="flex items-center gap-1.5 px-4 py-2.5 bg-[#EF4123] text-white rounded-xl text-[12px] hover:bg-[#D93A1F] shadow-sm shadow-[#EF4123]/25">
+                <button
+                  onClick={() => navigate("/inventory/add")}
+                  className="flex items-center gap-1.5 px-4 py-2.5 bg-[#EF4123] text-white rounded-xl text-[12px] hover:bg-[#D93A1F] shadow-sm shadow-[#EF4123]/25"
+                >
                   <Plus className="w-4 h-4" /> Add Item
                 </button>
               </div>
