@@ -119,9 +119,15 @@ export function InventoryPage() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => navigate("/inventory/purchase")}
-                  className="px-4 py-2.5 bg-[#EF4123] text-white rounded-xl text-[12px] hover:bg-[#D93A1F] shadow-sm shadow-[#EF4123]/25"
+                  className="px-4 py-2.5 bg-white border border-[#EF4123] text-[#EF4123] rounded-xl text-[12px] hover:bg-[#FEF3F0] transition-colors"
                 >
                   Pembelian Bahan Baku
+                </button>
+                <button
+                  onClick={() => navigate("/inventory/movement")}
+                  className="px-4 py-2.5 bg-white border border-[#EBEBEB] text-[#6B7280] rounded-xl text-[12px] hover:bg-[#F5F5F5] transition-colors"
+                >
+                  Pergerakan Stok
                 </button>
                 <div className="w-px h-6 bg-[#EBEBEB] mx-1"></div>
                 <button className="px-4 py-2.5 border border-[#EF4123] text-[#EF4123] rounded-xl text-[12px] hover:bg-[#FEF3F0]">Import CSV</button>

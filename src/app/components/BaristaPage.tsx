@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { TopBar } from "./TopBar";
 import { baristas } from "./pos-data";
-import { ArrowRight, Calendar, Clock, Award, Coffee, Timer, ChevronDown, Users, Star } from "lucide-react";
+import { ArrowRight, Calendar, Clock, Award, Coffee, Timer, ChevronDown, Users, Star, Key } from "lucide-react";
 
 const avatarColors = [
   "from-orange-400 to-red-400",
@@ -29,6 +30,7 @@ const statusBadge: Record<string, { bg: string; text: string }> = {
 };
 
 export function BaristaPage() {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedMonth, setSelectedMonth] = useState("March 2026");
 
@@ -128,11 +130,11 @@ export function BaristaPage() {
             </div>
 
             <div className="flex gap-3 mt-4">
-              <button className="flex-1 py-3 rounded-xl bg-[#EF4123] text-white text-[13px] hover:bg-[#D93A1F] shadow-sm shadow-[#EF4123]/25">
+              <button onClick={() => navigate("/barista/shift")} className="flex-1 py-3 rounded-xl bg-[#EF4123] text-white text-[13px] hover:bg-[#D93A1F] shadow-sm shadow-[#EF4123]/25">
                 Assign Shift
               </button>
-              <button className="flex-1 py-3 rounded-xl border border-[#EBEBEB] text-[#6B7280] text-[13px] hover:bg-[#FAFAFA]">
-                Edit Schedule
+              <button onClick={() => navigate("/barista/pin")} className="flex-1 py-3 rounded-xl border border-[#EBEBEB] text-[#6B7280] text-[13px] hover:bg-[#FAFAFA] flex items-center justify-center gap-1.5">
+                <Key className="w-3.5 h-3.5" /> Atur PIN
               </button>
             </div>
           </div>
@@ -188,7 +190,7 @@ export function BaristaPage() {
             </div>
 
             <div className="flex items-center justify-end mt-4">
-              <button className="flex items-center gap-1 text-[12px] text-[#EF4123] hover:underline">
+              <button onClick={() => navigate("/barista/performance")} className="flex items-center gap-1 text-[12px] text-[#EF4123] hover:underline">
                 Full Report <ArrowRight className="w-3 h-3" />
               </button>
             </div>

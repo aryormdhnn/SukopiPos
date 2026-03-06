@@ -91,12 +91,20 @@ export function ReportPage() {
               </button>
             ))}
           </div>
-          <button
-            onClick={() => navigate("/report/detailed")}
-            className="flex items-center gap-2 px-4 py-2.5 bg-[#EF4123] text-white rounded-xl text-[12px] hover:bg-[#D93A1F] shadow-sm shadow-[#EF4123]/25 transition-colors"
-          >
-            View Detailed Reports <ArrowRight className="w-4 h-4" />
-          </button>
+          <div className="flex items-center gap-2">
+            <button onClick={() => navigate("/report/top-products")} className="flex items-center gap-1.5 px-4 py-2.5 bg-white text-[#6B7280] rounded-xl text-[12px] border border-[#EBEBEB] hover:bg-[#F5F5F5] transition-colors">
+              Produk Terlaris
+            </button>
+            <button onClick={() => navigate("/report/promo")} className="flex items-center gap-1.5 px-4 py-2.5 bg-white text-[#6B7280] rounded-xl text-[12px] border border-[#EBEBEB] hover:bg-[#F5F5F5] transition-colors">
+              Promo & Diskon
+            </button>
+            <button
+              onClick={() => navigate("/report/detailed")}
+              className="flex items-center gap-2 px-4 py-2.5 bg-[#EF4123] text-white rounded-xl text-[12px] hover:bg-[#D93A1F] shadow-sm shadow-[#EF4123]/25 transition-colors"
+            >
+              View Detailed Reports <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
         {/* Stat Cards */}

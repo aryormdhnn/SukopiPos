@@ -66,11 +66,13 @@ function MoreMenu({
   onViewDetails,
   onDuplicate,
   onDelete,
+  onEdit,
 }: {
   product: Product;
   onViewDetails: () => void;
   onDuplicate: () => void;
   onDelete: () => void;
+  onEdit: () => void;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -100,7 +102,7 @@ function MoreMenu({
             <Eye className="w-3.5 h-3.5 text-[#9CA3AF]" /> View Details
           </button>
           <button
-            onClick={(e) => { e.stopPropagation(); setOpen(false); }}
+            onClick={(e) => { e.stopPropagation(); setOpen(false); onEdit(); }}
             className="flex items-center gap-2.5 w-full px-4 py-2.5 text-[12px] text-[#1A1A2E] hover:bg-[#FAFAFA] transition-colors"
           >
             <Edit3 className="w-3.5 h-3.5 text-[#9CA3AF]" /> Edit Product
@@ -261,9 +263,8 @@ function ProductDetailModal({
               <div className="px-4 py-2.5 bg-[#FAFAFA] border-b border-[#EBEBEB] flex items-center gap-2">
                 <button
                   onClick={() => setExtraEnabled(!extraEnabled)}
-                  className={`w-5 h-5 rounded flex items-center justify-center transition-colors ${
-                    extraEnabled ? "bg-[#EF4123]" : "border border-[#D4D4D4]"
-                  }`}
+                  className={`w-5 h-5 rounded flex items-center justify-center transition-colors ${extraEnabled ? "bg-[#EF4123]" : "border border-[#D4D4D4]"
+                    }`}
                 >
                   {extraEnabled && (
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -439,8 +440,9 @@ export function ManageMenuPage() {
                     <MoreMenu
                       product={product}
                       onViewDetails={() => setSelectedProduct(product)}
-                      onDuplicate={() => {}}
-                      onDelete={() => {}}
+                      onDuplicate={() => { }}
+                      onDelete={() => { }}
+                      onEdit={() => navigate(`/menu/edit?id=${product.id}`)}
                     />
                   </td>
                 </tr>
