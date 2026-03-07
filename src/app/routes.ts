@@ -12,6 +12,7 @@ import { TerimaStokPage } from "./components/TerimaStokPage";
 import { ReportPage } from "./components/ReportPage";
 import { DetailedReportsPage } from "./components/DetailedReportsPage";
 import { PromoPage } from "./components/PromoPage";
+import { CreatePromoPage } from "./components/CreatePromoPage";
 import { TopProductsPage } from "./components/TopProductsPage";
 import { ManageMenuPage } from "./components/ManageMenuPage";
 import { AddProductPage } from "./components/AddProductPage";
@@ -40,6 +41,7 @@ export function createRouter() {
         { path: "report", Component: ReportPage },
         { path: "report/detailed", Component: DetailedReportsPage },
         { path: "report/promo", Component: PromoPage },
+        { path: "report/promo/create", Component: CreatePromoPage },
         { path: "report/top-products", Component: TopProductsPage },
         { path: "menu", Component: ManageMenuPage },
         { path: "menu/add", Component: AddProductPage },

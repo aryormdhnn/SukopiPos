@@ -85,7 +85,7 @@ export function PromoPage() {
                             </button>
                         ))}
                     </div>
-                    <button className="flex items-center gap-1.5 px-4 py-2.5 bg-[#EF4123] text-white rounded-xl text-[12px] hover:bg-[#D93A1F] shadow-sm">
+                    <button onClick={() => navigate("/report/promo/create")} className="flex items-center gap-1.5 px-4 py-2.5 bg-[#EF4123] text-white rounded-xl text-[12px] hover:bg-[#D93A1F] shadow-sm">
                         <Plus className="w-4 h-4" /> Create Promo
                     </button>
                 </div>
